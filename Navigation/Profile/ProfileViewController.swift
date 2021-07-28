@@ -61,6 +61,8 @@ extension ProfileViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: reuseId, for: indexPath) as! PostTableViewCell
+        let posting = Posts.feedModel[indexPath.section].posting[indexPath.row]
+        cell.posting = posting
         
         return cell
     }
@@ -75,9 +77,8 @@ extension ProfileViewController: UITableViewDataSource {
 extension ProfileViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         
-        let fasting = Posts.feedModel[indexPath.section].posting[indexPath.row]
-        
-        (cell as! PostTableViewCell).posting = fasting
+       // let posting = Posts.feedModel[indexPath.section].posting[indexPath.row]
+       // (cell as! PostTableViewCell).posting = posting
         
     }
     

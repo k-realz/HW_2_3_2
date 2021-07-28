@@ -11,7 +11,7 @@ import UIKit
 struct Posting {
     var autor: String
     var description: String
-    var image: UIImage
+    var image: String
     var numberOfLikes: Int
     var numberOfviews: Int
 }
@@ -27,10 +27,10 @@ struct Posts {
     static let feedModel = [
         PostingSections(
             posting: [
-                Posting(autor: "_k_real_", description: "Today is a good day", image: #imageLiteral(resourceName: "Kirill"),  numberOfLikes: 350, numberOfviews: 500),
-                Posting(autor: "Erika", description: "Black sea", image: #imageLiteral(resourceName: "Erika"),  numberOfLikes: 1200, numberOfviews: 1600),
-                Posting(autor: "_slim_shevy_", description: "I believe a can fly", image: #imageLiteral(resourceName: "Evelina"),  numberOfLikes: 600, numberOfviews: 850),
-                Posting(autor: "_eldar_ado_", description: "School...soon", image: #imageLiteral(resourceName: "Eldar"), numberOfLikes: 370, numberOfviews: 500)
+                Posting(autor: "_k_real_", description: "King Kong is better then me! Today is a good day, the best day in my life, the day of the travel, sun, sea", image: "Kirill",  numberOfLikes: 350, numberOfviews: 500),
+                Posting(autor: "Erika", description: "Black sea", image: "Erika",  numberOfLikes: 1200, numberOfviews: 1600),
+                Posting(autor: "_slim_shevy_", description: "I believe a can fly", image: "Evelina",  numberOfLikes: 600, numberOfviews: 850),
+                Posting(autor: "_eldar_ado_", description: "School...soon", image: "Eldar", numberOfLikes: 370, numberOfviews: 500)
                 
         
         ])

@@ -61,7 +61,7 @@ class ProfileTableHeaderView: UITableViewHeaderFooterView {
      actionButton.clipsToBounds = false
      actionButton.backgroundColor = .systemBlue
      actionButton.setTitleColor(.white, for: .normal)
-     actionButton.setTitle("New status", for: .normal)
+     actionButton.setTitle("Set status", for: .normal)
      actionButton.translatesAutoresizingMaskIntoConstraints = false
     
      actionButton.addTarget(self, action: #selector(actionButtonPressed), for: .touchUpInside)
@@ -119,43 +119,46 @@ class ProfileTableHeaderView: UITableViewHeaderFooterView {
         contentView.addSubview(actionButton)
         contentView.addSubview(avatar)
         
-        newStatus.leftView = spaceView
-        contentView.addSubview(spaceView)
+        //newStatus.leftView = spaceView
+        //contentView.addSubview(spaceView)
         
 
     let constraints = [
-                userName.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 27),
-                //userName.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 12),
-                //deviceImageView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -12),
-                userName.centerXAnchor.constraint(equalTo: contentView.centerXAnchor),
-                //userName.trailingAnchor.constraint(equalTo: deviceImageView.heightAnchor),
                 
-                currentStatus.topAnchor.constraint(equalTo: userName.bottomAnchor, constant: 10),
-                currentStatus.leadingAnchor.constraint(equalTo: userName.leadingAnchor),
-                //currentStatus.widthAnchor.constraint(equalTo: contentView.widthAnchor),
+        avatar.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 16),
+        avatar.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 16),
+        avatar.heightAnchor.constraint(equalToConstant: 100),
+        avatar.widthAnchor.constraint(equalToConstant: 100),
+        
+        userName.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 26),
+        userName.leadingAnchor.constraint(equalTo: avatar.leadingAnchor, constant: 120),
+        
+        currentStatus.topAnchor.constraint(equalTo: userName.bottomAnchor, constant: 26),
+        currentStatus.leadingAnchor.constraint(equalTo: userName.leadingAnchor),
+        
+        newStatus.topAnchor.constraint(equalTo: currentStatus.bottomAnchor, constant: 10),
+        newStatus.leadingAnchor.constraint(equalTo: currentStatus.leadingAnchor),
+        newStatus.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -16),
+        newStatus.heightAnchor.constraint(equalToConstant: 40),
+        
+        actionButton.topAnchor.constraint(equalTo: newStatus.bottomAnchor, constant: 10),
+        actionButton.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 16),
+        actionButton.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -16)
+        
+        
+        
+        /*
+                //spaceView.topAnchor.constraint(equalTo: newStatus.topAnchor, constant: 8),
+                //spaceView.leadingAnchor.constraint(equalTo: newStatus.leadingAnchor, constant: 10),
+                //spaceView.widthAnchor.constraint(equalToConstant: 20),
+                //spaceView.bottomAnchor.constraint(equalTo: newStatus.bottomAnchor),
                 
-                newStatus.topAnchor.constraint(equalTo: currentStatus.bottomAnchor, constant: 10),
-                newStatus.leadingAnchor.constraint(equalTo: userName.leadingAnchor),
-                newStatus.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -16),
-                newStatus.heightAnchor.constraint(equalToConstant: 40),
                 
-                spaceView.topAnchor.constraint(equalTo: newStatus.topAnchor),
-                spaceView.leadingAnchor.constraint(equalTo: newStatus.leadingAnchor, constant: 10),
-                spaceView.widthAnchor.constraint(equalToConstant: 20),
-                spaceView.bottomAnchor.constraint(equalTo: newStatus.bottomAnchor),
-                
-                actionButton.topAnchor.constraint(equalTo: avatar.bottomAnchor, constant: 16),
-                actionButton.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 16),
-                actionButton.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -16),
-                
-                avatar.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 16),
-                avatar.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 16),
-                avatar.heightAnchor.constraint(equalToConstant: 100),
-                avatar.widthAnchor.constraint(equalToConstant: 100)
-                
+        */
             ]
             
             NSLayoutConstraint.activate(constraints)
         }
+ 
 }
     
